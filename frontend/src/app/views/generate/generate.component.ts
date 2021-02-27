@@ -1,20 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { generate } from 'rxjs';
 
 @Component({
   selector: 'app-generate',
-  template: `
-    <p>
-      generate works!
-    </p>
-  `,
-  styles: [
-  ]
+  templateUrl: './generate.component.html',
+  styleUrls: ['./generate.component.css'],
 })
 export class GenerateComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }
