@@ -5,32 +5,35 @@
         <mat-card-subtitle>Gere sua crendecial aqui </mat-card-subtitle>
       
 
-    <form>
+    <form [formGroup]="homeForm" (ngSubmit)="onSubmit()">
          <mat-form-field appearance="outline">
            <mat-label>Nome    </mat-label>
-             <input matInput >
+             <input matInput formControlName="name" required>
+             <mat-error *ngIf="f.name.errors.required">{{ getErrorMessageName()}}</mat-error>
           </mat-form-field>
 
 
          <mat-form-field appearance="outline">
            <mat-label>E-mail</mat-label>
-              <input matInput >
+              <input matInput placeholder="pat@example.com" formControlName="email" required>
+              <mat-error *ngIf="f.email.errors.required">{{getErrorMessageEmail()}}</mat-error>
+              <mat-error *ngIf="f.email.errors.email">{{getErrorMessageEmail()}}</mat-error>
           </mat-form-field>
  
 
        <mat-form-field appearance="outline">
          <mat-label>Twitter</mat-label>
-        <input matInput >          
+        <input matInput formControlName="twitter">          
         </mat-form-field> 
 
        <mat-form-field appearance="outline">
          <mat-label>Github    </mat-label>
-          <input matInput >
+          <input matInput formControlName="github">
         </mat-form-field> 
     </form>
     <div>
-      <button mat-raised-button color="accent" class="criar">Create</button>
-      <button mat-raised-button color="warn" class="cancelar">Cancel</button>
+      <button  mat-raised-button color="accent" class="criar"(click)="navigationToGenerate()">Create</button>
+      <button mat-raised-button color="warn" class="cancelar" (click)="onSubmit()">Cancel</button>
     </div>
   </mat-card>
 
