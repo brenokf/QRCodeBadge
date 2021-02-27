@@ -3,7 +3,8 @@
   flex-direction: column;
   align-items: center;
   width: 300px;
-  background-color: #292D2E ;
+  background-color: #3a3b3b ;
+  border-radius: 30px;
 }
 .home .title{
   font-weight: 300;
