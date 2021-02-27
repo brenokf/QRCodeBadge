@@ -14,26 +14,38 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { QRCodeModule } from 'angularx-qrcode';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 import { HomeComponent } from './views/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ContainerComponent } from './components/template/container/container.component';
+import { NavComponent } from './components/template/nav/nav.component';
 import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { GenerateComponent } from './views/generate/generate.component';
+import { CreateQrcodeComponent } from './components/badge/create-qrcode/create-qrcode.component';
+import { CreateLayoutComponent } from './components/badge/create-layout/create-layout.component';
+import { ReadInformationsComponent } from './components/badge/read-informations/read-informations.component';
+import { ContactsComponent } from './views/contacts/contacts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContainerComponent,
+    NavComponent,
     HeaderComponent,
     FooterComponent,
     HomeComponent,
     GenerateComponent,
+    CreateQrcodeComponent,
+    CreateLayoutComponent,
+    ReadInformationsComponent,
+    ContactsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -47,6 +59,9 @@ import { GenerateComponent } from './views/generate/generate.component';
     MatButtonModule,
     MatIconModule,
     FontAwesomeModule,
+    QRCodeModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
